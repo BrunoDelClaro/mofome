@@ -3,31 +3,52 @@
   <head>
     <title>Mó Fome</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./tesi.css" />
-    <link rel="stylesheet" href="./toferrado.css" />
+    <link rel="stylesheet" href="./mofome.css" />
     <script src="./tesi.js"></script>
-    <script src="./toferrado.js"></script>
+    <script src="./mofome.js"></script>
+    <link rel="apple-touch-icon" sizes="57x57" href="./assets/manifest-icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./assets/manifest-icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./assets/manifest-icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./assets/manifest-icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./assets/manifest-icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./assets/manifest-icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./assets/manifest-icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./assets/manifest-icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/manifest-icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="./assets/manifest-icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./assets/manifest-icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/manifest-icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/manifest-icons/favicon-16x16.png">
+    <link rel="manifest" href="./manifest.webmanifest" crossorigin="use-credentials" />
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
   </head>
   <body>
-    <header class="headerBar dark">
+    <header class="headerBar">
       <div class="appName">Mó Fome</div>
       <div class="badge warning"><span id="estado">0</span></div>
     </header>
 
     <div id="tela1" class="component">
-      <div class="componentHeader">
+      <div class="componentHeader ">
         <h1 class="componentTitle">Minha Lista de Compras</h1>
+        <button id="btnClear" class="button primary">
+          <img src="./assets/shopping-basket.png" />
+        </button>
         <button id="btnAdic" class="button primary">
           <img src="./assets/plus1.png" />
         </button>
+        
       </div>
       <div class="componentContent">
         <div id="blank">
-          <img src="./assets/hangloose.png" />
-          <p>Nada a fazer agora.</p>
+          <img src="./assets/shopping-basket-Back.png" />
+          <p>Adicione produtos e vamos as compras</p>
         </div>
-        <ul id="listaDeTarefas" class="list hidden"></ul>
+        <ul id="listaDeCompras" class="list hidden"></ul>
       </div>
     </div>
 
@@ -39,7 +60,7 @@
       </div>
       <div class="componentContent">
         <div class="field">
-          <label for="inputName" class="half">Nome do Produto:</label>
+          <label for="inputName" class="half">Nome:</label>
           <input id="inputName" type="text" autocomplete="off" />
         </div>
         <div class="field">
@@ -61,12 +82,20 @@
 
     <div id="tela3" class="component hidden">
       <div class="componentHeader">
-        <h1 class="componentTitle">Alteração de tarefa</h1>
+        <h1 class="componentTitle">Alteração de produto</h1>
       </div>
       <div class="componentContent">
         <div class="field">
-          <label for="inputAlteraTarefa">Tarefa:</label>
-          <input id="inputAlteraTarefa" type="text" autocomplete="off" />
+          <label for="inputAlteraNome" class="half">Nome:</label>
+          <input id="inputAlteraNome" type="text" autocomplete="off" />
+        </div>
+        <div class="field">
+          <label for="inputAlteraDesc" class="half">Descrição:</label>
+          <input id="inputAlteraDesc" type="text" autocomplete="off" />
+        </div>
+        <div class="field">
+          <label for="inputAlteraNum" class="half">Quantidade:</label>
+          <input id="inputAlteraNum" inputmode="numeric" pattern="[0-9]*" type="text" autocomplete="off" />
         </div>
         <div class="buttonGroup end mt1">
           <button id="btnCanc2" class="button quarter light">Cancelar</button>
@@ -74,7 +103,7 @@
         </div>
         <div class="buttonGroup end mt3">
           <button id="btnDel" class="button quarter danger">
-            Apagar tarefa
+            Apagar produto
           </button>
         </div>
       </div>

@@ -41,7 +41,7 @@ p {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #282634;
+  background-color: #1d3a4e;
   color: #fff;
   height: 5rem;
   display: flex;
@@ -69,18 +69,23 @@ p {
   position: fixed;
   left: 0;
   padding: 1rem 0;
-  background-color: #909599;
   height: 3rem;
+  background-color: #909599;
   width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
+}
+
+.componentHeader .button{
+  margin-left: 1rem;
 }
 
 .componentTitle {
   margin-left: 1rem;
   flex: 1;
+  
 }
 
 .componentTitle ~ *:last-child {
@@ -197,7 +202,7 @@ p {
 .field {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   flex:1;
   padding: 1rem;
@@ -205,6 +210,8 @@ p {
 
 .field label {
   margin-right: 0.5rem;
+  min-width: 5rem;
+  
 }
 
 .field label.half {
@@ -226,7 +233,11 @@ p {
 .field input {
   flex: 1;
   height: 2rem;
-  padding: 0.3rem 0.7rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  padding-left: 0.7rem;
+  padding-right: 0.3rem;
+  margin-right: 0.3rem;
   color: #000;
   background: #fff;
   border: thin solid #dce5e8;
@@ -264,6 +275,11 @@ p {
   border: thin solid #2a679b;
 }
 
+.list li.completed{
+  background: #b1cf72;
+  border: thin solid #a0be61;
+}
+
 .list li:first-child {
   border-top-width: thin;
   border-radius: 0.35rem 0.35rem 0 0;
@@ -285,19 +301,35 @@ p {
 
 }
 
+.groupRow{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .badgeList{
   border: thin solid black;
-  border-radius: 0.75rem;
-  min-width: 1.6rem;
+  border-radius: 2rem;
+  min-width: 3rem;
   text-align: center;
   background-color: #1d3a4e;
   color: #fff;
   margin-right: 1rem;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+
 }
 
 .badgeList span{
   color: #fff;
   font-size: 1.1rem;
+  flex:1
+  
+}
+
+.badgeList .hidden {
+  display: none;
 }
 
 /* cores */
@@ -372,6 +404,10 @@ p {
 .dark:active {
   background: #282634;
   border: thin solid #171524;
+}
+.completed{
+  background: #b1cf72;
+  border: thin solid #a0be61;
 }
 
 /* espaçamentos */

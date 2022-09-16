@@ -1,3 +1,5 @@
+
+//Apresentar os elementos desejados
 onload = () => {
   let tabs = document.querySelectorAll('.navBar .tab');
 
